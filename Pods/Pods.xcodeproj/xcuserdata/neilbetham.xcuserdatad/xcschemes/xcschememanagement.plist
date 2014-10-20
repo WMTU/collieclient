@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-CollieClient-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CollieClient-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CollieClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CollieClientTests-Mantle.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CollieClientTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>518C289C2DA2E6E434BE92B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51F18FEBAC66E8A0F0A7B2E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98E5EFAD95A0CDCEDB458919</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE74D85CF666DE209CC8ED18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D10D22D46CC985123E7AED83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
