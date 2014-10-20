@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +641,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CollieClient" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -667,15 +667,60 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="CollieClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="288" height="232"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yvS-Yz-VvE">
+                                <rect key="frame" x="57" y="176" width="175" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="n2J-Ss-jbW"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Collie" drawsBackground="YES" id="Hvl-67-yA0">
+                                    <font key="font" size="30" name="HelveticaNeue-ThinItalic"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r1W-ki-rBE">
+                                <rect key="frame" x="57" y="119" width="175" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Email" drawsBackground="YES" id="yR9-km-aGh">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xDx-rl-WAi">
+                                <rect key="frame" x="57" y="57" width="175" height="22"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Password" drawsBackground="YES" usesSingleLineMode="YES" id="Z6G-OD-aWw">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xDx-rl-WAi" firstAttribute="top" secondItem="r1W-ki-rBE" secondAttribute="bottom" constant="40" id="2yq-ZU-Oht"/>
+                            <constraint firstItem="xDx-rl-WAi" firstAttribute="trailing" secondItem="r1W-ki-rBE" secondAttribute="trailing" id="BPJ-DP-q0t"/>
+                            <constraint firstItem="r1W-ki-rBE" firstAttribute="top" secondItem="yvS-Yz-VvE" secondAttribute="bottom" constant="35" id="Blw-r6-Hzm"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xDx-rl-WAi" secondAttribute="bottom" constant="50" id="Zml-K4-Crd"/>
+                            <constraint firstItem="r1W-ki-rBE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="50" id="a5f-0G-XyN"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r1W-ki-rBE" secondAttribute="trailing" constant="50" id="lWY-FG-fBh"/>
+                            <constraint firstItem="xDx-rl-WAi" firstAttribute="leading" secondItem="r1W-ki-rBE" secondAttribute="leading" id="p75-K4-2kh"/>
+                            <constraint firstItem="r1W-ki-rBE" firstAttribute="trailing" secondItem="yvS-Yz-VvE" secondAttribute="trailing" id="sNi-kd-bJL"/>
+                            <constraint firstItem="yvS-Yz-VvE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="uGv-kM-jcU"/>
+                            <constraint firstItem="yvS-Yz-VvE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="vCo-EX-1YI"/>
+                            <constraint firstItem="yvS-Yz-VvE" firstAttribute="leading" secondItem="r1W-ki-rBE" secondAttribute="leading" id="ziV-58-3YJ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="-21" y="662"/>
         </scene>
     </scenes>
 </document>
