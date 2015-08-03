@@ -1,1 +1,0 @@
-PODS_COLLIECLIENT_MANTLE_OTHER_LDFLAGS = -framework "Foundation"
