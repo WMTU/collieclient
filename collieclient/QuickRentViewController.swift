@@ -63,9 +63,12 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         }
         
         let output = AVCaptureMetadataOutput()
+        
         output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
         session.addOutput(output)
-        output.metadataObjectTypes = output.availableMetadataObjectTypes
+        output.metadataObjectTypes = ["org.iso.Code128"]
+        
+        println(output.availableMetadataObjectTypes)
         
         
         previewLayer = AVCaptureVideoPreviewLayer.layerWithSession(session) as! AVCaptureVideoPreviewLayer
