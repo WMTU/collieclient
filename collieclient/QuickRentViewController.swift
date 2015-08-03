@@ -107,7 +107,6 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                     
                     detectionString = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
                     
-                    self.session.stopRunning()
                     break
                 }
                 
