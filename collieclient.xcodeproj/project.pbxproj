@@ -14,6 +14,7 @@
 		4DF5C1A01B6F1A600086DC37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DF5C19F1B6F1A600086DC37 /* Images.xcassets */; };
 		4DF5C1A31B6F1A600086DC37 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DF5C1A11B6F1A600086DC37 /* LaunchScreen.xib */; };
 		4DF5C1AF1B6F1A600086DC37 /* collieclientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF5C1AE1B6F1A600086DC37 /* collieclientTests.swift */; };
+		C8153CECE602D812741F9F41 /* Pods_collieclient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CFF8E00864A94E750AEB6B /* Pods_collieclient.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 		4DF5C1A81B6F1A600086DC37 /* collieclientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = collieclientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DF5C1AD1B6F1A600086DC37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DF5C1AE1B6F1A600086DC37 /* collieclientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collieclientTests.swift; sourceTree = "<group>"; };
+		55CFF8E00864A94E750AEB6B /* Pods_collieclient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_collieclient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3C9206004381B2D03D3017C /* Pods-collieclient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-collieclient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-collieclient/Pods-collieclient.debug.xcconfig"; sourceTree = "<group>"; };
+		F6FFBDE86FD734060F339843 /* Pods-collieclient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-collieclient.release.xcconfig"; path = "Pods/Target Support Files/Pods-collieclient/Pods-collieclient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8153CECE602D812741F9F41 /* Pods_collieclient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,8 @@
 				4DF5C1931B6F1A600086DC37 /* collieclient */,
 				4DF5C1AB1B6F1A600086DC37 /* collieclientTests */,
 				4DF5C1921B6F1A600086DC37 /* Products */,
+				737ECCD48D86F875A569EDC3 /* Pods */,
+				CD77E707AEC31B918E5455CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		737ECCD48D86F875A569EDC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3C9206004381B2D03D3017C /* Pods-collieclient.debug.xcconfig */,
+				F6FFBDE86FD734060F339843 /* Pods-collieclient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CD77E707AEC31B918E5455CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55CFF8E00864A94E750AEB6B /* Pods_collieclient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DF5C1B21B6F1A600086DC37 /* Build configuration list for PBXNativeTarget "collieclient" */;
 			buildPhases = (
+				66264916D9DB29AE21FE8536 /* Check Pods Manifest.lock */,
 				4DF5C18D1B6F1A600086DC37 /* Sources */,
 				4DF5C18E1B6F1A600086DC37 /* Frameworks */,
 				4DF5C18F1B6F1A600086DC37 /* Resources */,
+				4F04A1F1097795DC602E3F2B /* Embed Pods Frameworks */,
+				7521F4CAA7933B4C98B3B238 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F04A1F1097795DC602E3F2B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-collieclient/Pods-collieclient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66264916D9DB29AE21FE8536 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7521F4CAA7933B4C98B3B238 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-collieclient/Pods-collieclient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DF5C18D1B6F1A600086DC37 /* Sources */ = {
@@ -342,6 +417,7 @@
 		};
 		4DF5C1B31B6F1A600086DC37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3C9206004381B2D03D3017C /* Pods-collieclient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = collieclient/Info.plist;
@@ -352,6 +428,7 @@
 		};
 		4DF5C1B41B6F1A600086DC37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6FFBDE86FD734060F339843 /* Pods-collieclient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = collieclient/Info.plist;
@@ -413,6 +490,7 @@
 				4DF5C1B41B6F1A600086DC37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DF5C1B51B6F1A600086DC37 /* Build configuration list for PBXNativeTarget "collieclientTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +499,7 @@
 				4DF5C1B71B6F1A600086DC37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
