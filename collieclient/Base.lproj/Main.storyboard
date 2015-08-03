@@ -17,6 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tgs-Zn-q68">
+                                <rect key="frame" x="0.0" y="406" width="600" height="145"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="R4B-u9-OOc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="u1p-8c-iry"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="MyA-2K-HlN"/>
+                                </connections>
+                            </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sy-hL-ivV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Quick Rent View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
                                 <rect key="frame" x="167" y="279" width="265.5" height="41.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -33,10 +48,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="tgs-Zn-q68" firstAttribute="top" secondItem="9sy-hL-ivV" secondAttribute="bottom" id="AOK-mF-GT1"/>
+                            <constraint firstItem="tgs-Zn-q68" firstAttribute="bottom" secondItem="4ug-Mw-9AY" secondAttribute="top" id="C0g-s3-26e"/>
+                            <constraint firstItem="tgs-Zn-q68" firstAttribute="trailing" secondItem="9sy-hL-ivV" secondAttribute="trailing" id="GYQ-lg-Tau"/>
+                            <constraint firstItem="9sy-hL-ivV" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="QOv-8L-e2T"/>
+                            <constraint firstItem="tgs-Zn-q68" firstAttribute="leading" secondItem="9sy-hL-ivV" secondAttribute="leading" id="i5l-Fl-JNF"/>
+                            <constraint firstAttribute="trailing" secondItem="tgs-Zn-q68" secondAttribute="trailing" id="itL-k3-tmH"/>
+                            <constraint firstItem="9sy-hL-ivV" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="zFJ-94-GHD"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -46,6 +64,10 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quick Rent" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="BarcodeScanList" destination="tgs-Zn-q68" id="KrD-ar-8dL"/>
+                        <outlet property="ScannerPreview" destination="9sy-hL-ivV" id="T3w-ao-dpG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

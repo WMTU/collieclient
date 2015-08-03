@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UITableViewDelegate, UITableViewDataSource {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -20,6 +20,11 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     let session         : AVCaptureSession = AVCaptureSession()
     var previewLayer    : AVCaptureVideoPreviewLayer!
     var highlightView   : UIView = UIView()
+    var barCodes        : [String] = []
+    
+    @IBOutlet var scannerPreview: UIView!
+    @IBOutlet var barcodeScanList: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +40,7 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         self.highlightView.layer.borderWidth = 3
         
         // Add it to our controller's view as a subview.
-        self.view.addSubview(self.highlightView)
+        scannerPreview.addSubview(self.highlightView)
         
         
         // For the sake of discussion this is the camera
@@ -64,18 +69,20 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         
         previewLayer = AVCaptureVideoPreviewLayer.layerWithSession(session) as! AVCaptureVideoPreviewLayer
-        previewLayer.frame = self.view.bounds
+        previewLayer.frame = scannerPreview.bounds
         previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        self.view.layer.addSublayer(previewLayer)
+        
+        scannerPreview.layer.addSublayer(previewLayer)
+        
         
         // Start the scanner. You'll have to end it yourself later.
         session.startRunning()
         
+        barcodeScanList.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
     // This is called when we find a known barcode type with the camera.
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        
         var highlightViewRect = CGRectZero
         
         var barCodeObject : AVMetadataObject!
@@ -97,9 +104,7 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         // The scanner is capable of capturing multiple 2-dimensional barcodes in one scan.
         for metadata in metadataObjects {
-            
             for barcodeType in barCodeTypes {
-                
                 if metadata.type == barcodeType {
                     barCodeObject = self.previewLayer.transformedMetadataObjectForMetadataObject(metadata as! AVMetadataMachineReadableCodeObject)
                     
@@ -109,16 +114,30 @@ class QuickRentViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                     
                     break
                 }
-                
             }
         }
         
-        println(detectionString)
+        if detectionString != nil {
+            barCodes.insert(detectionString, atIndex: 0)
+            
+            barcodeScanList.reloadData()
+        }
+        
         self.highlightView.frame = highlightViewRect
-        self.view.bringSubviewToFront(self.highlightView)
+        scannerPreview.bringSubviewToFront(self.highlightView)
         
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return barCodes.count
+    }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = barcodeScanList.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        cell.textLabel?.text = self.barCodes[indexPath.row]
+        
+        return cell
+    }
 }
 
